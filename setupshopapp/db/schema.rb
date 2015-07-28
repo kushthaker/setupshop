@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728221047) do
+ActiveRecord::Schema.define(version: 20150728222204) do
 
   create_table "orders", force: :cascade do |t|
     t.float    "total"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20150728221047) do
   end
 
   add_index "orders", ["shopper_id"], name: "index_orders_on_shopper_id"
+
+  create_table "orders_products_tables", id: false, force: :cascade do |t|
+    t.integer "orders_id"
+    t.integer "products_id"
+  end
+
+  add_index "orders_products_tables", ["orders_id"], name: "index_orders_products_tables_on_orders_id"
+  add_index "orders_products_tables", ["products_id"], name: "index_orders_products_tables_on_products_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
