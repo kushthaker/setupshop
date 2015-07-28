@@ -1,0 +1,99 @@
+
+This is a minimalist API for people to set up shop.
+
+Elastic SVG Elements!! Checkout for UI.
+
+1. Guests view all shops > shop > items in shop
+2. Registered users see same thing, with shopping cart, however with account feature and detailed history
+3. Shop owner sees shop dashboard -- CRUD for inventory, record of business
+
+API requires:
+
+	Register as shopper or storeowner -- login, logout.
+
+	MODELS REFINED
+
+	USER devise shopper: --> has one shopper, has one shopowner
+	SHOPPER name:string phone:string user:references --> has many orders
+	SHOPOWNER name:string phone:string user:references --> has one shop
+	
+	SHOP name:string description:string logo:string shopowner:references --> has many products
+	PRODUCT name:string description:string image:string price:float shop:references --> has_and_belongs_to_many :orders
+	ORDER completed:bool shopper:references --> has_and_belongs_to_many :products
+
+
+	
+	-orders_products table for the has_many_and_belongs_to relationship.
+	-stripe api, deal with later this week. 
+
+
+	FINAL MODEL IMPLEMENTATION:
+
+	USER --> devise credentials.
+	SHOPPER --> name:string phone:string image:string
+	SHOPOWNER --> name:string phone:string image:string
+	SHOP --> 
+
+
+ 	Guests: 	get shops (all shops)
+ 				get shop 
+ 				get product
+
+ 				MODELS
+ 				SHOP has many products, belongs to storeowner
+ 				PRODUCT, belongs to shop
+
+ 	Shopper:	post add_to_cart
+ 				delete remove_from_cart 
+ 				post place_order
+ 				post make_payment
+ 				get  transactions
+
+ 				CART has many products, belongs to guest (is this better done on the front-end, considering guests?)
+ 				
+ 				ORDER has one cart, belongs to shopper (this is where a cart is submitted for a loggedin user?)
+ 				
+ 				ORDER_PRODUCT -- instance of product that is inside an order, only exists 
+
+ 				ORDER has manny products, 
+ 				PAYMENT has one order, belongs to shopper through order.
+
+ 	Storeowner:	post add_to_inventory
+ 				delete remove_from_inventory
+ 				update edit_inventory_item
+ 				get order_history
+
+ 				INVENTORY has many products, belongs to storeowner.
+ 				has and belongs to many
+
+
+
+ 	What kinds of models exist here?
+
+ 	SHOP has many products, belongs to storeowner
+ 	PRODUCT, belongs to shop
+
+ 				
+ 		
+
+	Storeowner: ADD or EDIT or REMOVE product from store. 
+
+	User --- has one admin profile, shopper profile.
+	Product --- belongs to admin profile and shopper profile through User.
+	Payment --- belongs to shopper profile 
+	Order --- has one admin profile, shopper profile.
+
+
+
+	Notes from Rares and Jamie
+
+	Tympanus ideas checkout effects for UI.
+	Running a scaffold Product --> product:id, name, price:float, image, category
+	Seeds.rb file, filler data (Rares has provided)... rake db:seed to run seed file.
+	Set up some kind of visual understanding, basic, so you know what you're working with.
+
+
+	Rares dealt with the Stripe API stuff on the front end, simply with the UI and some jquery handling. He sent up the credit card stuff and got back a stripetoken - this is what he's sending up to rails.
+
+	There is documentation for this - it's rails g charge... look it up.
+
