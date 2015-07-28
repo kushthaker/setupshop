@@ -11,7 +11,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728135738) do
+ActiveRecord::Schema.define(version: 20150728221047) do
+
+  create_table "orders", force: :cascade do |t|
+    t.float    "total"
+    t.boolean  "completed"
+    t.integer  "shopper_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "orders", ["shopper_id"], name: "index_orders_on_shopper_id"
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "image"
+    t.float    "price"
+    t.integer  "shop_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "products", ["shop_id"], name: "index_products_on_shop_id"
+
+  create_table "shopkeepers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "shopkeepers", ["user_id"], name: "index_shopkeepers_on_user_id"
+
+  create_table "shoppers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "shoppers", ["user_id"], name: "index_shoppers_on_user_id"
+
+  create_table "shops", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "logo"
+    t.integer  "shopowner_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "shops", ["shopowner_id"], name: "index_shops_on_shopowner_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",                            null: false

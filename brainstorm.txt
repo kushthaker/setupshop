@@ -15,7 +15,7 @@ API requires:
 
 	USER devise shopper: --> has one shopper, has one shopowner
 	SHOPPER name:string phone:string user:references --> has many orders
-	SHOPOWNER name:string phone:string user:references --> has one shop
+	SHOPKEEPER name:string phone:string user:references --> has one shop
 	
 	SHOP name:string description:string logo:string shopowner:references --> has many products
 	PRODUCT name:string description:string image:string price:float shop:references --> has_and_belongs_to_many :orders

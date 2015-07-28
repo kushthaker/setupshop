@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :orders, except: [:new, :edit]
+  resources :products, except: [:new, :edit]
+  resources :shops, except: [:new, :edit]
+  resources :shopkeepers, except: [:new, :edit]
+  resources :shoppers, except: [:new, :edit]
   mount_devise_token_auth_for 'User', at: 'auth'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
