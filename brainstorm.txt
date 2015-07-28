@@ -19,7 +19,7 @@ API requires:
 	
 	SHOP name:string description:string logo:string shopowner:references --> has many products
 	PRODUCT name:string description:string image:string price:float shop:references --> has_and_belongs_to_many :orders
-	ORDER completed:bool shopper:references --> has_and_belongs_to_many :products
+	ORDER total:float completed:bool shopper:references --> has_and_belongs_to_many :products
 
 
 	
