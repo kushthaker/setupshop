@@ -1,5 +1,8 @@
+* REMEMBER TO HANDLE EDGECASES ON SUBMISSIONS, use angular form validation *
 
-July 28 2015
+
+
+July 29 2015
 
 1. 	Test if 500 error on registration is b/c of rails-api gem 
 	(run on non-rails-api project)
@@ -8,19 +11,34 @@ July 28 2015
 
 3. Setup shopper or shopkeeper option on /landing view
 
-4. implement Shopper create, form and post request 
+4. Shopper create, form and post request 
 
-3. implement Shopkeeper create, form and post request
+3. Shopkeeper create, form and post request
+
+
 
 -- SHOPKEEPER SHOP MANAGEMENT
 
-4. implement Shop create, form and post request
+4. Shop create, form and post request
 
-5. implement Product create, form and post request
+5. Product create, form and post request
 
-5. implement Product delete, post request
+5. Product delete, post request
 
 
+
+-- SHOPPER EXPERIENCE
+
+6. Get request for all shops, view on /landing view
+
+7. Cart handling brainstorm
+
+
+-- ORDER AND PAYMENT
+
+-- TRANSACTION VIEWS
+
+-- ACCOUNT HANDLING
 
 
 
