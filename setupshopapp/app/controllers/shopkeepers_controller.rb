@@ -1,6 +1,6 @@
 class ShopkeepersController < ApplicationController
   before_action :set_shopkeeper, only: [:show, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /shopkeepers
   # GET /shopkeepers.json
   def index
@@ -18,10 +18,12 @@ class ShopkeepersController < ApplicationController
   # POST /shopkeepers
   # POST /shopkeepers.json
   def create
-    @shopkeeper = Shopkeeper.new(shopkeeper_params)
+    @shopkeeper = Shopkeeper.new#(shopkeeper_params)
+    #@shopkeeper.user_id = current_user.id
+
 
     if @shopkeeper.save
-      render json: @shopkeeper, status: :created, location: @shopkeeper
+      render json: @shopkeeper, status: :created, location: shopkeepers_path
     else
       render json: @shopkeeper.errors, status: :unprocessable_entity
     end
@@ -54,6 +56,6 @@ class ShopkeepersController < ApplicationController
     end
 
     def shopkeeper_params
-      params.require(:shopkeeper).permit(:name, :phone, :user_id)
+      params.require(:shopkeeper).permit(:name, :phone)
     end
 end

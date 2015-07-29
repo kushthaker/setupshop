@@ -11,7 +11,7 @@ July 29 2015
 
 2.	Setup login on /landing, check if 'current_user' devise helper is working [x]
 
-3. Setup shopper or shopkeeper option on /landing view
+3. Setup shopper or shopkeeper option on /landing view [x]
 
 4. Shopper create, form and post request 
 

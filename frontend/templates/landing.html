@@ -8,6 +8,7 @@
 
 	<div class="container">
 		<div class="row">
+			<h1 class="text-center">Login Form</h1>
 			<div class="col-md-4 text col-md-offset-4">
 				<form ng-submit="ctrl.login()" role="form">
 					<div class="form-group">
@@ -25,6 +26,56 @@
 			</div>
 		</div>
 	</div>
+
+	<hr>
+	<hr>
+
+	<div class="container">
+
+	<!-- SHOPPER REGISTRATION FORM -->
+
+		<div class="row">	
+			<h1 class="text-center">Are you a shopper or shopkeeper?</h1>
+			<div class="col-md-4 col-md-offset-2">
+				<form ng-submit="ctrl.registerShopper()" role="form">
+					<h3>Shopper</h3>
+					<div class="form-group">
+						<label>name</label>
+						<input type="name" name="name" ng-model="ctrl.shopperForm.name" required="required" class="form-control"/>
+					</div>
+
+					<div class="form-group">
+						<label>phone</label>
+						<input type="text" name="phone" ng-model="ctrl.shopperForm.phone" required="required" class="form-control"/>
+					</div>
+
+					<button type="submit" class="btn btn-primary btn-lg">Start Shopping</button>
+				</form>
+			</div>
+
+			
+			<!-- SHOPKEEPER REGISTRATION FORM -->
+
+			<div class="col-md-4">
+				<form ng-submit="ctrl.registerShopkeeper()" role="form">
+					<h3>Shopkeeper</h3>
+					<div class="form-group">
+						<label>name</label>
+						<input type="name" name="name" ng-model="ctrl.shopperkeeperForm.name" required="required" class="form-control"/>
+					</div>
+
+					<div class="form-group">
+						<label>phone</label>
+						<input type="text" name="phone" ng-model="ctrl.shopperkeeperForm.phone" required="required" class="form-control"/>
+					</div>
+
+					<button type="submit" class="btn btn-primary btn-lg">Start Shopping</button>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
 
 </body>
 
