@@ -6,24 +6,30 @@
 
 <body>
 
-	<form ng-submit="ctrl.register()" role="form">
-		<div class="form-group">
-			<label>email</label>
-			<input type="email" name="email" ng-model="ctrl.registrationForm.email" required="required" class="form-control"/>
-		</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 text col-md-offset-4">
+				<form ng-submit="ctrl.register()" role="form">
+					<div class="form-group">
+						<label>email</label>
+						<input type="email" name="email" ng-model="ctrl.registrationForm.email" required="required" class="form-control"/>
+					</div>
 
-		<div class="form-group">
-			<label>password</label>
-			<input type="password" name="password" ng-model="ctrl.registrationForm.password" required="required" class="form-control"/>
-		</div>
+					<div class="form-group">
+						<label>password</label>
+						<input type="password" name="password" ng-model="ctrl.registrationForm.password" required="required" class="form-control"/>
+					</div>
 
-		<div class="form-group">
-			<label>password confirmation</label>
-			<input type="password" name="password_confirmation" ng-model="ctrl.registrationForm.password_confirmation" required="required" class="form-control"/>
-		</div>
+					<div class="form-group">
+						<label>password confirmation</label>
+						<input type="password" name="password_confirmation" ng-model="ctrl.registrationForm.password_confirmation" required="required" class="form-control"/>
+					</div>
 
-		<button type="submit" class="btn btn-primary btn-lg">Register</button>
-	</form>
+					<button type="submit" class="btn btn-primary btn-lg">Register</button>
+				</form>
+			</div>
+		</div>
+	</div>
 
 </body>
 

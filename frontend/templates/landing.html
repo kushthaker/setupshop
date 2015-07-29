@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>setupshop welcome</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 text col-md-offset-4">
+				<form ng-submit="ctrl.login()" role="form">
+					<div class="form-group">
+						<label>email</label>
+						<input type="email" name="email" ng-model="ctrl.loginForm.email" required="required" class="form-control"/>
+					</div>
+
+					<div class="form-group">
+						<label>password</label>
+						<input type="password" name="password" ng-model="ctrl.loginForm.password" required="required" class="form-control"/>
+					</div>
+
+					<button type="submit" class="btn btn-primary btn-lg">Login</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

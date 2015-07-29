@@ -5,9 +5,11 @@
 July 29 2015
 
 1. 	Test if 500 error on registration is b/c of rails-api gem 
-	(run on non-rails-api project)
+	(run on non-rails-api project) [x]
 
-2.	Setup login on /landing, check if 'current_user' devise helper is working
+	// had to remove 'confirmable' in User model... this is because i don't want email confirmation, and it wasn't set up. 
+
+2.	Setup login on /landing, check if 'current_user' devise helper is working [x]
 
 3. Setup shopper or shopkeeper option on /landing view
 
