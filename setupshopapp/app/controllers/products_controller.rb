@@ -20,8 +20,8 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-    @shopkeeper = Shopkeeper.where(user_id: current_user.id).take!
-    @shop = Shop.where(shopkeeper_id: @shopkeeper.id).take!
+    @shopkeeper = current_user.shopkeeper
+    @shop = @shopkeeper.shop
     @product.shop_id = @shop.id
 
 

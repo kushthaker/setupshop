@@ -20,7 +20,7 @@ class ShopsController < ApplicationController
   # POST /shops.json
   def create
     @shop = Shop.new(shop_params)
-    @shopkeeper = Shopkeeper.where(user_id: current_user.id).take!
+    @shopkeeper = current_user.shopkeeper
     @shop.shopkeeper_id = @shopkeeper.id
 
     if @shop.save
