@@ -14,61 +14,39 @@ function UserService($auth, $http) {
 
 angular.module('setUpShopApp').service('user', UserService);
 
-UserService.prototype.login = function() {
-	var self = this;
-	self.auth.submitLogin(self.loginForm)
-	.then(function(resp) {
-		console.log('successful login', resp);
-		})
-	.catch(function(resp) {
-		console.log('unsuccessful login', resp);
-	});
+UserService.prototype.handleSuccess = function(resp, request) {
+	console.log('successful' + request, resp);
+	return resp.data;
 };
 
-UserService.prototype.register = function() {
-	var self = this;
-	self.auth.submitRegistration(self.registrationForm)
-	.then(function(resp) {
-		console.log('successful registration', resp);
-      })
-	.catch(function(resp) {
-        console.log('unsuccessful registration', resp);
-      });
+UserService.prototype.handleFailure = function(resp, request) {
+	console.log('unsuccessful' + request, resp);
+	return resp.data;
 };
 
-
-UserService.prototype.registerShopper = function() {
-
+UserService.prototype.userRequest = function(form, request) {
 	var self = this;
 
-	return self.http.post(BASE_URL + SHOPPERS, {"shopper": self.shopperForm})
-	.then(function(resp) {
-		console.log("successful shopper registration", resp)
-		return resp.data;
-	})
-	.catch(function(resp) {
-		console.log("unsuccessful shopper registration", resp)
-		return resp.data;
-	});
-
+	if (request === 'registration') {
+		self.auth.submitRegistration(form)
+		.then(self.handleSuccess(resp, request))
+		.catch(self.handleFailure(resp, request));
+	}
+	else if (request === 'login') {
+		self.auth.submitLogin(form)
+		.then(self.handleSuccess(resp, request))
+		.catch(self.handleFailure(resp, request));
+	}
+	else if (request === 'shopper registration') {
+		return self.http.post(BASE_URL + SHOPPERS, {"shopper": form})		
+		.then(self.handleSuccess(resp, request))
+		.catch(self.handleFailure(resp, request));
+	}
+	else if (request === 'shopkeeper registration') {
+		return self.http.post(BASE_URL + SHOPKEEPERS, {"shopkeeper": form})		
+		.then(self.handleSuccess(resp, request))
+		.catch(self.handleFailure(resp, request));
+	}
+	else
+		throw 'invalid request';
 };
-
-UserService.prototype.registerShopkeeper = function() {
-
-	var self = this;
-
-	return self.http.post(BASE_URL + SHOPKEEPERS, {"shopkeeper": self.shopkeeperForm})
-	.then(function(resp) {
-		console.log("successful shopkeeper registration", resp)
-		return resp.data;
-	})
-	.catch(function(resp) {
-		console.log("unsuccessful shopkeeper registration", resp)
-		return resp.data;
-	});
-
-};
-
-
-
-

@@ -10,7 +10,6 @@ function RegisterCtrl($location, $auth, user) {
 angular.module('setUpShopApp').controller('registerCtrl', RegisterCtrl);
 
 RegisterCtrl.prototype.register = function() {
-	this.user.registrationForm = this.registrationForm;
-	this.user.register();
+	this.user.userRequest(this.registrationForm, USER_REG);
 	this.location.path('/landing');
 };
