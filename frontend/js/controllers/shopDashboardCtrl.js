@@ -1,15 +1,21 @@
-function ShopDashboardCtrl($location, shop, products) {
+function ShopDashboardCtrl($location, shop) {
 	
-	//dependencies
-	this.products = products;
+	var self = this;
 
 	//services
-	this.location = $location;
-	this.shop = shop;
+	self.location = $location;
+	self.shop = shop;
 	
 	//forms for requests
-	this.shopForm = {};
-	this.productForm = {};
+	self.shopForm = {};
+	self.productForm = {};
+
+	//dependencies
+	self.shop.getProducts().then(function (data) {
+		self.products = data;
+	})
+
+
 }
 
 angular.module('setUpShopApp').controller('shopDashboardCtrl', ShopDashboardCtrl);

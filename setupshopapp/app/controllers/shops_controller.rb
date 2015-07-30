@@ -7,7 +7,16 @@ class ShopsController < ApplicationController
   def index
     @shops = Shop.all
 
-    render json: @shops
+    # render json: @shops
+
+    completedShops = []
+
+    @shops.each do |shop|      
+      completedShops << { shop: { created_at: shop.created_at, description: shop.description, id: shop.id, name: shop.name, logo: shop.logo, shopkeeper_id: shop.shopkeeper_id, products: shop.products } }
+    end
+
+    render json: completedShops
+
   end
 
   # GET /shops/1

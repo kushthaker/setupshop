@@ -19,14 +19,6 @@ app.config(function($routeProvider) {
 	.when('/dashboard', {
 		templateUrl: '../templates/shop-dashboard.html',
 		controller: 'shopDashboardCtrl as ctrl',
-		resolve: {
-			products: function($location, shop){
-				return shop.getProducts()
-				.catch(function (response) {
-					$location.path('/welcome')
-				})
-			}
-		}
 	})
 	.otherwise({
 		redirectTo: '/welcome',

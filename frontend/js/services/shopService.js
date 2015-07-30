@@ -41,7 +41,7 @@ ShopService.prototype.addProduct = function() {
 
 ShopService.prototype.removeProduct = function(id) {
 	var self = this;
-	return self.http.delete(BASE_URL + DEL_PRODUCTS + id)
+return self.http.delete(BASE_URL + DEL_PRODUCTS + id)
 	.then(function(resp) {
 		console.log("successful product deletion", resp)
 		return resp.data;
@@ -63,6 +63,22 @@ ShopService.prototype.getProducts = function() {
 	})
 	.catch(function(resp) {
 		console.log("unsuccessful products retrieval", resp)
+		return resp.data;
+	});
+
+};
+
+ShopService.prototype.getShops = function() {
+
+	var self = this;
+
+	return self.http.get(BASE_URL + SHOPS)
+	.then(function(resp) {
+		console.log("successful shops retrieval", resp)
+		return resp.data;
+	})
+	.catch(function(resp) {
+		console.log("unsuccessful shops retrieval", resp)
 		return resp.data;
 	});
 

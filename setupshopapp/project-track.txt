@@ -29,23 +29,24 @@ July 29 2015
 
 6. Product delete request [x]
 
-7. get products, display on shop dashboard with delete option
-
-
+7. get products, display on shop dashboard with delete option [x]
 
 
 -- SHOPPER EXPERIENCE
 
-8. Get request for all shops, view on /landing view
+8. Get request for all shops, view on /landing view 
 
 7. Cart handling brainstorm
 
 
--- ORDER AND PAYMENT
+-- ORDERS PRODUCTS TABLE LOGIC
+
+-- STRIPE
 
 -- TRANSACTION VIEWS
 
 -- ACCOUNT HANDLING
 
+-- UI/UX
 
 

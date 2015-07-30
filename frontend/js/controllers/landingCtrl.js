@@ -1,10 +1,21 @@
-function LandingCtrl($location, $auth, user) {
-	this.location = $location;
-	this.auth = $auth;
-	this.user = user;
-	this.loginForm = {};
-	this.shopperForm = {};
-	this.shopkeeperForm = {};
+function LandingCtrl($location, $auth, user, shop) {
+	var self = this;
+	
+	//service
+	self.location = $location;
+	self.auth = $auth;
+	self.user = user;
+	self.shop = shop;
+
+	//user service forms
+	self.loginForm = {};
+	self.shopperForm = {};
+	self.shopkeeperForm = {};
+
+	//dependencies
+	self.shop.getShops().then(function (data) {
+		self.shops = data;
+	})
 }
 
 angular.module('setUpShopApp').controller('landingCtrl', LandingCtrl);
@@ -24,5 +35,5 @@ LandingCtrl.prototype.registerShopper = function() {
 LandingCtrl.prototype.registerShopkeeper = function() {
 	this.user.shopkeeperForm = this.shopkeeperForm;
 	this.user.registerShopkeeper();
-	this.location.path('/landing');
+	this.location.path('/dashboard');
 };
