@@ -40,3 +40,19 @@ ShopService.prototype.addProduct = function() {
 	});
 
 };
+
+ShopService.prototype.removeProduct = function(id) {
+
+	var self = this;
+
+	return self.http.delete(BASE_URL + PRODUCTS + id)
+	.then(function(resp) {
+		console.log("successful product deletion", resp)
+		return resp.data;
+	})
+	.catch(function(resp) {
+		console.log("unsuccessful product deletion", resp)
+		return resp.data;
+	});
+
+};

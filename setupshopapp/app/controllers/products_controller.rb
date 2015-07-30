@@ -20,8 +20,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-    @shopkeeper = current_user.shopkeeper
-    @shop = @shopkeeper.shop
+    @shop = current_user.shopkeeper.shop
     @product.shop_id = @shop.id
 
 
@@ -47,6 +46,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+
     @product.destroy
 
     head :no_content
