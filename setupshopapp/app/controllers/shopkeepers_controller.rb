@@ -1,6 +1,7 @@
 class ShopkeepersController < ApplicationController
   before_action :set_shopkeeper, only: [:show, :update, :destroy]
   before_action :authenticate_user!
+
   # GET /shopkeepers
   # GET /shopkeepers.json
   def index
@@ -18,9 +19,8 @@ class ShopkeepersController < ApplicationController
   # POST /shopkeepers
   # POST /shopkeepers.json
   def create
-    @shopkeeper = Shopkeeper.new#(shopkeeper_params)
-    #@shopkeeper.user_id = current_user.id
-
+    @shopkeeper = Shopkeeper.new(shopkeeper_params)
+    @shopkeeper.user_id = current_user.id
 
     if @shopkeeper.save
       render json: @shopkeeper, status: :created, location: shopkeepers_path

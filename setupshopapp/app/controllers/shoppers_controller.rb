@@ -1,5 +1,6 @@
 class ShoppersController < ApplicationController
   before_action :set_shopper, only: [:show, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /shoppers
   # GET /shoppers.json
@@ -19,6 +20,7 @@ class ShoppersController < ApplicationController
   # POST /shoppers.json
   def create
     @shopper = Shopper.new(shopper_params)
+    @shopper.user_id = current_user.id
 
     if @shopper.save
       render json: @shopper, status: :created, location: @shopper
@@ -54,6 +56,6 @@ class ShoppersController < ApplicationController
     end
 
     def shopper_params
-      params.require(:shopper).permit(:name, :phone, :user_id)
+      params.require(:shopper).permit(:name, :phone)
     end
 end

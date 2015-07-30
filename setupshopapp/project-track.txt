@@ -13,9 +13,9 @@ July 29 2015
 
 3. Setup shopper or shopkeeper option on /landing view [x]
 
-4. Shopper create, form and post request 
+4. Shopper create, form and post request [x]
 
-3. Shopkeeper create, form and post request
+3. Shopkeeper create, form and post request [x]
 
 
 
