@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /products
   # GET /products.json
@@ -19,6 +20,10 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @shopkeeper = Shopkeeper.where(user_id: current_user.id).take!
+    @shop = Shop.where(shopkeeper_id: @shopkeeper.id).take!
+    @product.shop_id = @shop.id
+
 
     if @product.save
       render json: @product, status: :created, location: @product
@@ -54,6 +59,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:name, :description, :image, :price, :shop_id)
+      params.require(:product).permit(:name, :description, :image, :price)
     end
 end

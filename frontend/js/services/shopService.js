@@ -3,6 +3,7 @@ function ShopService($http) {
 	this.http = $http;
 
 	this.shopForm = {};
+	this.productForm = {};
 
 }
 
@@ -19,6 +20,22 @@ ShopService.prototype.createShop = function() {
 	})
 	.catch(function(resp) {
 		console.log("unsuccessful shop registration", resp)
+		return resp.data;
+	});
+
+};
+
+ShopService.prototype.addProduct = function() {
+
+	var self = this;
+
+	return self.http.post(BASE_URL + PRODUCTS, {"product": self.productForm})
+	.then(function(resp) {
+		console.log("successful product registration", resp)
+		return resp.data;
+	})
+	.catch(function(resp) {
+		console.log("unsuccessful product registration", resp)
 		return resp.data;
 	});
 

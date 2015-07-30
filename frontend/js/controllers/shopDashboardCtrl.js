@@ -6,6 +6,7 @@ function ShopDashboardCtrl($location, shop) {
 	
 	//forms for requests
 	this.shopForm = {};
+	this.productForm = {};
 }
 
 angular.module('setUpShopApp').controller('shopDashboardCtrl', ShopDashboardCtrl);
@@ -16,4 +17,8 @@ ShopDashboardCtrl.prototype.createShop = function() {
 	this.location.path('/dashboard');
 };
 
-//index.html add js
+ShopDashboardCtrl.prototype.addProduct = function() {
+	this.shop.productForm = this.productForm;
+	this.shop.addProduct();
+	this.location.path('/dashboard');
+};
