@@ -1,6 +1,7 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /shops
   # GET /shops.json
   def index
@@ -19,6 +20,8 @@ class ShopsController < ApplicationController
   # POST /shops.json
   def create
     @shop = Shop.new(shop_params)
+    @shopkeeper = Shopkeeper.where(user_id: current_user.id).take!
+    @shop.shopkeeper_id = @shopkeeper.id
 
     if @shop.save
       render json: @shop, status: :created, location: @shop
