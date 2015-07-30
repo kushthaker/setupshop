@@ -1,5 +1,8 @@
-function ShopDashboardCtrl($location, shop) {
+function ShopDashboardCtrl($location, shop, products) {
 	
+	//dependencies
+	this.products = products;
+
 	//services
 	this.location = $location;
 	this.shop = shop;
@@ -18,7 +21,17 @@ ShopDashboardCtrl.prototype.createShop = function() {
 };
 
 ShopDashboardCtrl.prototype.addProduct = function() {
-	this.shop.productForm = this.productForm;
-	this.shop.addProduct();
-	this.location.path('/dashboard');
+	
+	var self = this;
+
+	self.shop.productForm = this.productForm;
+	self.shop.addProduct();
+	self.location.path('/dashboard');
+
+};
+
+ShopDashboardCtrl.prototype.removeProduct = function(id) {
+	var self = this;
+	self.shop.removeProduct(id);
+	self.location.path('/dashboard');
 };

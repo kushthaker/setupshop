@@ -26,7 +26,6 @@ ShopService.prototype.createShop = function() {
 };
 
 ShopService.prototype.addProduct = function() {
-
 	var self = this;
 
 	return self.http.post(BASE_URL + PRODUCTS, {"product": self.productForm})
@@ -38,14 +37,12 @@ ShopService.prototype.addProduct = function() {
 		console.log("unsuccessful product registration", resp)
 		return resp.data;
 	});
-
 };
 
 ShopService.prototype.removeProduct = function(id) {
-
 	var self = this;
 
-	return self.http.delete(BASE_URL + PRODUCTS + id)
+	return self.http.post(DEL_PRODUCTS + id)
 	.then(function(resp) {
 		console.log("successful product deletion", resp)
 		return resp.data;
@@ -54,5 +51,22 @@ ShopService.prototype.removeProduct = function(id) {
 		console.log("unsuccessful product deletion", resp)
 		return resp.data;
 	});
+};
+
+ShopService.prototype.getProducts = function() {
+
+	var self = this;
+
+	return self.http.get(BASE_URL + PRODUCTS)
+	.then(function(resp) {
+		console.log("successful products retrieval", resp)
+		return resp.data;
+	})
+	.catch(function(resp) {
+		console.log("unsuccessful products retrieval", resp)
+		return resp.data;
+	});
 
 };
+
+

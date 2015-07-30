@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :shopkeepers, except: [:new, :edit]
   resources :shoppers, except: [:new, :edit]
   mount_devise_token_auth_for 'User', at: 'auth'
+
+  post 'delproducts/:id' => 'products#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

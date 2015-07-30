@@ -27,16 +27,16 @@ July 29 2015
 
 5. Product create, form and post request [x]
 
-5. Product delete, post request
+6. Product delete request [x]
 
-6. All deletes..
+7. get products, display on shop dashboard with delete option
 
 
 
 
 -- SHOPPER EXPERIENCE
 
-6. Get request for all shops, view on /landing view
+8. Get request for all shops, view on /landing view
 
 7. Cart handling brainstorm
 

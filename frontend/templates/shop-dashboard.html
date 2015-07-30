@@ -71,5 +71,21 @@
 <hr>
 <hr>
 
+<div class="row">
+<div class="col-md-4" ng-repeat="product in ctrl.products" text-center>
+	<span class="product">
+		<div>
+			<img ng-src="{{product.image}}" />
+			<p>name: {{product.name}}</p>
+			<p>description: {{product.description}}</p>
+			<p>price: {{product.price}}</p>
+			<button ng-click="ctrl.removeProduct(product.id)">remove</button>
+		</div>
+	</span>
+</div>
+</div>
+
+<pre>{{ctrl | json}}</pre>
+
 
 </div>

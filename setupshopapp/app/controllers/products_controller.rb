@@ -46,9 +46,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-
     @product.destroy
-
     head :no_content
   end
 
