@@ -41,8 +41,7 @@ ShopService.prototype.addProduct = function() {
 
 ShopService.prototype.removeProduct = function(id) {
 	var self = this;
-
-	return self.http.post(DEL_PRODUCTS + id)
+	return self.http.delete(BASE_URL + DEL_PRODUCTS + id)
 	.then(function(resp) {
 		console.log("successful product deletion", resp)
 		return resp.data;
