@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728222204) do
+ActiveRecord::Schema.define(version: 20150730035540) do
 
   create_table "orders", force: :cascade do |t|
     t.float    "total"
@@ -67,12 +67,12 @@ ActiveRecord::Schema.define(version: 20150728222204) do
     t.string   "name"
     t.string   "description"
     t.string   "logo"
-    t.integer  "shopowner_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "shopkeeper_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  add_index "shops", ["shopowner_id"], name: "index_shops_on_shopowner_id"
+  add_index "shops", ["shopkeeper_id"], name: "index_shops_on_shopkeeper_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",                            null: false
