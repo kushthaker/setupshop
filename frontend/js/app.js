@@ -16,6 +16,10 @@ app.config(function($routeProvider) {
 		templateUrl: '../templates/register.html',
 		controller: 'registerCtrl as ctrl'
 	})
+	.when('/dashboard', {
+		templateUrl: '../templates/shop-dashboard.html',
+		controller: 'shopDashboardCtrl as ctrl'
+	})
 	.otherwise({
 		redirectTo: '/welcome',
 	})

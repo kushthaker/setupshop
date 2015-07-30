@@ -21,6 +21,8 @@ July 29 2015
 
 -- SHOPKEEPER SHOP MANAGEMENT
 
+//FIGURE OUT HOW TO HIDE PICTURES BEHIND SIGNED-IN WALLS
+
 4. Shop create, form and post request
 
 5. Product create, form and post request
