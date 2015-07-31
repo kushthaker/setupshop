@@ -55,11 +55,7 @@ LandingCtrl.prototype.addToCart = function(product) {
 
 LandingCtrl.prototype.removeFromCart = function(product) {
 	var self = this;
-
-	// console.log(product.id)
-	// console.log(self.shoppingCart);
-	// debugger;
-
+	
 	var id = -1;
 
 	for(index in self.shoppingCart){
@@ -68,16 +64,9 @@ LandingCtrl.prototype.removeFromCart = function(product) {
 		}
 	}
 
-	//var id = self.shoppingCart.indexOf(product.name);
-
 	if (id !== -1) {
-		console.log('made it');
 		self.shoppingCart.splice(id, 1);
 	}
-
-	console.log(id);
-	debugger;
-
 
 	var shopping_cart = JSON.stringify(self.shoppingCart);
 	sessionStorage.setItem('cart', shopping_cart);
