@@ -11,6 +11,7 @@ function LandingCtrl($location, $auth, user, shop) {
 	self.loginForm = {};
 	self.shopperForm = {};
 	self.shopkeeperForm = {};
+	self.orderForm = {};
 
 	//dependencies
 	self.shop.getShops().then(function (data) {
@@ -19,6 +20,7 @@ function LandingCtrl($location, $auth, user, shop) {
 
 	//shopping cart
 	self.shoppingCart = [];
+
 }
 
 angular.module('setUpShopApp').controller('landingCtrl', LandingCtrl);
@@ -55,3 +57,11 @@ LandingCtrl.prototype.removeFromCart = function(product) {
 		
 	});
 };
+
+LandingCtrl.prototype.sendOrder = function() {
+	// this.total = this.shoppingCart.reduce(function (prev, curr){
+	// 	return prev.price + curr.price;
+	// });
+
+	this.shop.shoppingCart = JSON.stringify(this.shoppingCart);
+}

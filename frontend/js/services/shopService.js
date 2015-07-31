@@ -4,6 +4,7 @@ function ShopService($http) {
 
 	this.shopForm = {};
 	this.productForm = {};
+	this.orderForm = {};
 
 }
 
@@ -73,6 +74,22 @@ ShopService.prototype.getShops = function() {
 	var self = this;
 
 	return self.http.get(BASE_URL + SHOPS)
+	.then(function(resp) {
+		console.log("successful shops retrieval", resp)
+		return resp.data;
+	})
+	.catch(function(resp) {
+		console.log("unsuccessful shops retrieval", resp)
+		return resp.data;
+	});
+
+};
+
+ShopService.prototype.sendOrder = function() {
+
+	var self = this;
+
+	return self.http.post(BASE_URL + SHOPS)
 	.then(function(resp) {
 		console.log("successful shops retrieval", resp)
 		return resp.data;

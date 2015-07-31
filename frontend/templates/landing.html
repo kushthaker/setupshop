@@ -77,9 +77,12 @@
 	<hr>
 	<hr>
 
-	<div class="container">
-		{{ctrl.shoppingCart}}
+	<div class="container" ng-repeat="item in ctrl.shoppingCart">
+		{{item.name}} 
 	</div>
+	<button ng-click="ctrl.sendOrder()">Order</button>
+
+	<pre>{{ctrl.shoppingCart | json}}</pre>
 
 	<hr>
 	<hr>
