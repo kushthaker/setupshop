@@ -89,13 +89,13 @@ ShopService.prototype.sendOrder = function() {
 
 	var self = this;
 
-	return self.http.post(BASE_URL + SHOPS)
+	return self.http.post(BASE_URL + ORDERS, self.orderForm)
 	.then(function(resp) {
-		console.log("successful shops retrieval", resp)
+		console.log("order not successful", resp)
 		return resp.data;
 	})
 	.catch(function(resp) {
-		console.log("unsuccessful shops retrieval", resp)
+		console.log("order successful", resp)
 		return resp.data;
 	});
 

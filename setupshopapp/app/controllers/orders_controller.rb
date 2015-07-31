@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /orders
   # GET /orders.json
@@ -18,7 +19,24 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+
+    # hash = params
+    # hash = JSON.parse(hash) if hash.is_a?(String)
+    # @order = Order.new(hash)
+
+    @order = Order.new
+
+    @order.shopper_id = current_user.shopper.id
+
+    products = params["_json"]
+
+    products.each do |product|
+      logger.debug(product["id"])
+    end
+
+    
+
+
 
     if @order.save
       render json: @order, status: :created, location: @order
@@ -49,11 +67,11 @@ class OrdersController < ApplicationController
 
   private
 
-    def set_order
-      @order = Order.find(params[:id])
-    end
+  def set_order
+    @order = Order.find(params[:id])
+  end
 
-    def order_params
-      params.require(:order).permit(:total, :completed)
-    end
+  def order_params
+    params.require(:order).permit(:total, :completed)
+  end
 end

@@ -36,7 +36,7 @@ July 29 2015
 
 8. Get request for all shops, view on /landing view [x]
 
-7. Cart handling brainstorm
+7. Cart handling
 	- collect array of products on front end, 
 	- send up 
 

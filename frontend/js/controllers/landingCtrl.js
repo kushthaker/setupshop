@@ -56,9 +56,7 @@ LandingCtrl.prototype.removeFromCart = function(product) {
 };
 
 LandingCtrl.prototype.sendOrder = function() {
-	// this.total = this.shoppingCart.reduce(function (prev, curr){
-	// 	return prev.price + curr.price;
-	// });
-
-	this.shop.shoppingCart = JSON.stringify(this.shoppingCart);
+	this.shop.orderForm = JSON.stringify(this.shoppingCart);
+	this.shop.sendOrder();
+	this.location.path('/welcome');
 }
