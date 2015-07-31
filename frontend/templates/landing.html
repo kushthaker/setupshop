@@ -78,6 +78,13 @@
 	<hr>
 
 	<div class="container">
+		{{ctrl.shoppingCart}}
+	</div>
+
+	<hr>
+	<hr>
+
+	<div class="container">
 		<div class="shop" ng-repeat="shop in ctrl.shops">
 			<div class="row">
 				<div class="col-md-3">
@@ -93,6 +100,8 @@
 					<img ng-src="{{product.image}}" />
 					<p>{{product.name}}</p>
 					<p>{{product.price}}</p>
+					<button ng-click="ctrl.addToCart(product)">Add to Cart</button>
+					<button ng-click="ctrl.removeFromCart(product)">Remove from Cart</button>
 				</div>
 			</div>
 		</div>

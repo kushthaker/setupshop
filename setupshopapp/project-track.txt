@@ -37,6 +37,8 @@ July 29 2015
 8. Get request for all shops, view on /landing view [x]
 
 7. Cart handling brainstorm
+	- collect array of products on front end, 
+	- send up 
 
 
 -- ORDERS PRODUCTS TABLE LOGIC

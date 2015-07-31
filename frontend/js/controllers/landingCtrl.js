@@ -1,6 +1,6 @@
 function LandingCtrl($location, $auth, user, shop) {
 	var self = this;
-	
+
 	//service
 	self.location = $location;
 	self.auth = $auth;
@@ -16,6 +16,9 @@ function LandingCtrl($location, $auth, user, shop) {
 	self.shop.getShops().then(function (data) {
 		self.shops = data;
 	})
+
+	//shopping cart
+	self.shoppingCart = [];
 }
 
 angular.module('setUpShopApp').controller('landingCtrl', LandingCtrl);
@@ -36,4 +39,19 @@ LandingCtrl.prototype.registerShopkeeper = function() {
 	this.user.shopkeeperForm = this.shopkeeperForm;
 	this.user.registerShopkeeper();
 	this.location.path('/dashboard');
+};
+
+LandingCtrl.prototype.addToCart = function(product) {
+	this.shoppingCart.push(product);
+};
+
+LandingCtrl.prototype.removeFromCart = function(product) {
+	var self = this;
+
+	self.shoppingCart = self.shoppingCart.filter( function(value) {
+		if (product !== value) {
+			return value;
+		}
+		
+	});
 };
