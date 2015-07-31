@@ -19,8 +19,12 @@ function LandingCtrl($location, $auth, user, shop) {
 	})
 
 	//shopping cart
-	self.shoppingCart = [];
-
+	if (sessionStorage.getItem('cart') === null) {
+		self.shoppingCart = [];
+	}
+	else {
+		self.shoppingCart = JSON.parse(sessionStorage.getItem('cart'));
+	}
 }
 
 angular.module('setUpShopApp').controller('landingCtrl', LandingCtrl);
@@ -45,6 +49,8 @@ LandingCtrl.prototype.registerShopkeeper = function() {
 
 LandingCtrl.prototype.addToCart = function(product) {
 	this.shoppingCart.push(product);
+	var shopping_cart = JSON.stringify(this.shoppingCart);
+	sessionStorage.setItem('cart', shopping_cart);
 };
 
 LandingCtrl.prototype.removeFromCart = function(product) {
@@ -53,6 +59,8 @@ LandingCtrl.prototype.removeFromCart = function(product) {
 	var i = self.shoppingCart.indexOf('product.id');
 	self.shoppingCart.splice(i, 1);
 
+	var shopping_cart = JSON.stringify(self.shoppingCart);
+	sessionStorage.setItem('cart', shopping_cart);
 };
 
 LandingCtrl.prototype.sendOrder = function() {
