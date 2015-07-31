@@ -27,21 +27,25 @@ class OrdersController < ApplicationController
     @order = Order.new
 
     @order.shopper_id = current_user.shopper.id
-    @order.completed = nil
+    @order.completed = false
 
     products = params["_json"]
     sum_of_prices = 0
 
+    products_in_order = []
+
     products.each do |product|
-      logger.debug(product["id"])
-      sum_of_prices += product["price"]
+      product = Product.find(product["id"])
+      sum_of_prices += product.price
+      products_in_order << product
     end
+    
+    @order.products << products_in_order
 
     @order.total = sum_of_prices
 
-    
-
-
+    logger.debug("\n\n\n\n")
+    logger.debug(@order.total)
 
     if @order.save
       render json: @order, status: :created, location: @order
