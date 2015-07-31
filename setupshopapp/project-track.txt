@@ -34,7 +34,7 @@ July 29 2015
 
 -- SHOPPER EXPERIENCE
 
-8. Get request for all shops, view on /landing view 
+8. Get request for all shops, view on /landing view [x]
 
 7. Cart handling brainstorm
 
