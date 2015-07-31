@@ -77,7 +77,7 @@
 	<hr>
 	<hr>
 
-	<div class="container" ng-repeat="item in ctrl.shoppingCart">
+	<div class="container" ng-repeat="item in ctrl.shoppingCart track by $index">
 		{{item.name}} 
 	</div>
 	<button ng-click="ctrl.sendOrder()">Order</button>

@@ -50,12 +50,9 @@ LandingCtrl.prototype.addToCart = function(product) {
 LandingCtrl.prototype.removeFromCart = function(product) {
 	var self = this;
 
-	self.shoppingCart = self.shoppingCart.filter( function(value) {
-		if (product !== value) {
-			return value;
-		}
-		
-	});
+	var i = self.shoppingCart.indexOf('product.id');
+	self.shoppingCart.splice(i, 1);
+
 };
 
 LandingCtrl.prototype.sendOrder = function() {

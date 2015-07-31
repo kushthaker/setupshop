@@ -5,4 +5,4 @@ var SHOPKEEPERS = '/shopkeepers.json';
 var SHOPS = '/shops.json';
 var PRODUCTS = '/products.json';
 var DEL_PRODUCTS = '/products/';
-var ORDERS = '/products/';
+var ORDERS = '/orders.json';
