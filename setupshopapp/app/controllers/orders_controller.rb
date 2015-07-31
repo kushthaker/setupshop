@@ -27,12 +27,17 @@ class OrdersController < ApplicationController
     @order = Order.new
 
     @order.shopper_id = current_user.shopper.id
+    @order.completed = nil
 
     products = params["_json"]
+    sum_of_prices = 0
 
     products.each do |product|
       logger.debug(product["id"])
+      sum_of_prices += product["price"]
     end
+
+    @order.total = sum_of_prices
 
     
 
