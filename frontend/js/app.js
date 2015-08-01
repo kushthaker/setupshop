@@ -8,7 +8,11 @@ app.config(function($authProvider) {
 
 app.config(function($routeProvider) {
 	$routeProvider
-	.when('/welcome', {
+	.when('/shops', {
+		templateUrl: '../templates/shops.html',
+		controller: 'shopsCtrl as ctrl'
+	})
+	.when('/landing', {
 		templateUrl: '../templates/landing.html',
 		controller: 'landingCtrl as ctrl'
 	})
