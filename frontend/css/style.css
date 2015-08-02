@@ -62,4 +62,28 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
 .btn:hover, .btn-large:hover {
   background-color: #607D8B; }
 
+button:focus {
+  outline: none;
+  background-color: #607D8B; }
+
+#registration-nav input[type=text], #registration-nav input[type=password], #registration-nav input[type=email], #registration-nav input[type=url], #registration-nav input[type=time], #registration-nav input[type=date], #registration-nav input[type=datetime-local], #registration-nav input[type=tel], #registration-nav input[type=number], #registration-nav input[type=search], #registration-nav textarea.materialize-textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #FFFFFF;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  transition: all .3s;
+  margin: 5px 10px; }
+#registration-nav .login {
+  margin-right: 20px; }
+
 /*# sourceMappingURL=style.css.map */

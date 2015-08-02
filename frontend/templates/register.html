@@ -5,13 +5,29 @@
 </head>
 <body>
 
+	<section id="registration-nav">
 	<nav>
 		<div class="nav-wrapper">
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<ul id="nav-mobile" class="col s6">
 				<li><a href="#/shops">See Shops</a></li>
+			</ul>
+			<ul class="right">
+				<form ng-submit="ctrl.login()" role="form">
+				<li class="login">Login =></li>
+				<li>
+					<input type="email" name="email" ng-model="ctrl.loginForm.email" required="required" class="form-control" placeholder="Email"/>
+				</li>
+				<li>
+					<input type="password" name="password" ng-model="ctrl.loginForm.password" required="required" class="form-control" placeholder="Password">
+				</li>
+				<li>
+					<button type="submit" class="btn btn-primary btn-lg">Login</button>
+				</li>
+				</form>
 			</ul>
 		</div>
 	</nav>
+	</section>
 
 	<div class="container">
 		<div class="row">

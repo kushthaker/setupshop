@@ -74,6 +74,8 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
     box-shadow: 0 1px 0 0 $accent-color
 }
 
+// BUTTONS OVERRIDE
+
 .btn, .btn-large {
     text-decoration: none;
     color: #fff;
@@ -91,6 +93,41 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
 .btn:hover, .btn-large:hover {
     background-color: $accent-color;
 }
+
+button:focus {
+    outline: none;
+    background-color: $accent-color;
+}
+
+#registration-nav {
+	input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+	    background-color: transparent;
+	    border: none;
+	    border-bottom: 2px solid $text-light;
+	    border-radius: 0;
+	    outline: none;
+	    height: 3rem;
+	    width: 100%;
+	    font-size: 1rem;
+	    margin: 0 0 15px 0;
+	    padding: 0;
+	    box-shadow: none;
+	    -webkit-box-sizing: content-box;
+	    -moz-box-sizing: content-box;
+	    box-sizing: content-box;
+	    transition: all .3s;
+	    margin: 5px 10px
+	}
+	
+	.login {
+		margin-right: 20px;
+	}
+
+
+
+
+}
+
 
 // END OF REGISTRATION SECTION STYLES
 
