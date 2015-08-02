@@ -84,6 +84,9 @@ button:focus {
   transition: all .3s;
   margin: 5px 10px; }
 #registration-nav .login {
-  margin-right: 20px; }
+  margin-right: 30px; }
+#registration-nav nav i {
+  height: 64px;
+  line-height: 40px; }
 
 /*# sourceMappingURL=style.css.map */
