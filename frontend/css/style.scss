@@ -1,0 +1,26 @@
+body, html { 
+	font-family: 'Sarala', sans-serif;
+}
+
+$dark-primary: #303F9F; 
+$primary: #3F51B5; 
+$light-primary: #C5CAE9; 
+$text-light: #FFFFFF; 
+$accent-color: #607D8B;
+$primary-text: #212121; 
+$secondary-text: #727272; 
+$divider-color: #B6B6B6;
+
+// START OF NAVBAR STYLES
+
+nav {
+    color: $text-light;
+    background-color: $accent-color;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+nav {
+
+}
