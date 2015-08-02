@@ -21,19 +21,39 @@ nav {
     line-height: 50px;
 }
 
+// END OF NAVBAR STYLES
+
+// START OF HERO AND SUB-HERO STYLES
+
 #hero-section {
-	height: 600px;
+	height: 750px;
 	padding-top: 30px;
 	padding-bottom: 40px;
 	background-image: url(../img/hero.jpg);
 	background-size: cover;
+	background-repeat: no-repeat;
 }
+
+#sub-hero-section {
+	background-color: $accent-color;
+	color: $text-light;
+	height: 60px;
+
+	h4 {
+		margin: 0;
+		padding: 10px;
+	}
+}
+
+// END OF HERO AND SUBHERO STYLES
+
+// START OF REGISTRATION SECTION STYLES
 
 #registration-section {
 	padding: 50px;
 
 	h1 {
-		padding-left: 60px;
+		padding-left: 150px;
 	}
 
 	form {
@@ -67,3 +87,10 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
     transition: .2s ease-out;
     cursor: pointer;
 }
+
+.btn:hover, .btn-large:hover {
+    background-color: $accent-color;
+}
+
+// END OF REGISTRATION SECTION STYLES
+

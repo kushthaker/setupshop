@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+
+	<nav>
+		<div class="nav-wrapper">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="#/shops">See Shops</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<h1 class="center-align">Login Form</h1>
+			<div class="col-md-4 text col-md-offset-4">
+				<form ng-submit="ctrl.login()" role="form">
+					<div class="form-group">
+						<label>email</label>
+						<input type="email" name="email" ng-model="ctrl.loginForm.email" required="required" class="form-control"/>
+					</div>
+
+					<div class="form-group">
+						<label>password</label>
+						<input type="password" name="password" ng-model="ctrl.loginForm.password" required="required" class="form-control"/>
+					</div>
+
+					<button type="submit" class="btn btn-primary btn-lg">Login</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+	<hr>
+
+	<!-- SHOPPER REGISTRATION FORM -->
+
+	<div class="container">
+		<div class="row">	
+			<h1 class="text-center">Are you a shopper or shopkeeper?</h1>
+			<div class="col-md-4 col-md-offset-2">
+				<form ng-submit="ctrl.registerShopper()" role="form">
+					<h3>Shopper</h3>
+					<div class="form-group">
+						<label>name</label>
+						<input type="name" name="name" ng-model="ctrl.shopperForm.name" required="required" class="form-control"/>
+					</div>
+
+					<div class="form-group">
+						<label>phone</label>
+						<input type="text" name="phone" ng-model="ctrl.shopperForm.phone" required="required" class="form-control"/>
+					</div>
+
+					<button type="submit" class="btn btn-primary btn-lg">Start Shopping</button>
+				</form>
+			</div>
+
+
+			<!-- SHOPKEEPER REGISTRATION FORM -->
+
+			<div class="col-md-4">
+				<form ng-submit="ctrl.registerShopkeeper()" role="form">
+					<h3>Shopkeeper</h3>
+					<div class="form-group">
+						<label>name</label>
+						<input type="name" name="name" ng-model="ctrl.shopkeeperForm.name" required="required" class="form-control"/>
+					</div>
+
+					<div class="form-group">
+						<label>phone</label>
+						<input type="text" name="phone" ng-model="ctrl.shopkeeperForm.phone" required="required" class="form-control"/>
+					</div>
+
+					<button type="submit" class="btn btn-primary btn-lg">Start Shopping</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

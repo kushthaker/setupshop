@@ -9,16 +9,25 @@ nav {
   line-height: 50px; }
 
 #hero-section {
-  height: 600px;
+  height: 750px;
   padding-top: 30px;
   padding-bottom: 40px;
   background-image: url(../img/hero.jpg);
-  background-size: cover; }
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+#sub-hero-section {
+  background-color: #607D8B;
+  color: #FFFFFF;
+  height: 60px; }
+  #sub-hero-section h4 {
+    margin: 0;
+    padding: 10px; }
 
 #registration-section {
   padding: 50px; }
   #registration-section h1 {
-    padding-left: 60px; }
+    padding-left: 150px; }
   #registration-section form {
     padding-right: 60px;
     width: 80%; }
@@ -49,5 +58,8 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
   -ms-transition: .2s ease-out;
   transition: .2s ease-out;
   cursor: pointer; }
+
+.btn:hover, .btn-large:hover {
+  background-color: #607D8B; }
 
 /*# sourceMappingURL=style.css.map */

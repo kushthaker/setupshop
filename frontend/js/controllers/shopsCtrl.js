@@ -7,10 +7,7 @@ function ShopsCtrl($location, $auth, user, shop) {
 	self.user = user;
 	self.shop = shop;
 
-	//user service forms
-	self.loginForm = {};
-	self.shopperForm = {};
-	self.shopkeeperForm = {};
+	//shop service form
 	self.orderForm = {};
 
 	//dependencies
@@ -28,24 +25,6 @@ function ShopsCtrl($location, $auth, user, shop) {
 }
 
 angular.module('setUpShopApp').controller('shopsCtrl', ShopsCtrl);
-
-ShopsCtrl.prototype.login = function() {
-	this.user.loginForm = this.loginForm;
-	this.user.login();
-	this.location.path('/landing');
-};
-
-ShopsCtrl.prototype.registerShopper = function() {
-	this.user.shopperForm = this.shopperForm;
-	this.user.registerShopper();
-	this.location.path('/landing');
-};
-
-ShopsCtrl.prototype.registerShopkeeper = function() {
-	this.user.shopkeeperForm = this.shopkeeperForm;
-	this.user.registerShopkeeper();
-	this.location.path('/dashboard');
-};
 
 ShopsCtrl.prototype.clearCart = function() {
 	this.shoppingCart = [];
