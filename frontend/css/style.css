@@ -60,11 +60,11 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
   cursor: pointer; }
 
 .btn:hover, .btn-large:hover {
-  background-color: #607D8B; }
+  background-color: #455A64; }
 
 button:focus {
   outline: none;
-  background-color: #607D8B; }
+  background-color: #455A64; }
 
 #registration-nav input[type=text], #registration-nav input[type=password], #registration-nav input[type=email], #registration-nav input[type=url], #registration-nav input[type=time], #registration-nav input[type=date], #registration-nav input[type=datetime-local], #registration-nav input[type=tel], #registration-nav input[type=number], #registration-nav input[type=search], #registration-nav textarea.materialize-textarea {
   background-color: transparent;
@@ -91,10 +91,13 @@ button:focus {
 
 #profile-registration .option-card {
   width: 350px;
-  height: 400px;
+  height: 300px;
   background-color: #607D8B;
   color: #FFFFFF; }
 #profile-registration h2 {
   padding: 30px; }
+#profile-registration .option-card:hover {
+  background-color: #455A64;
+  cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

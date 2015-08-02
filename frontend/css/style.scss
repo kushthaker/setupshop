@@ -2,7 +2,7 @@ body, html {
 	font-family: 'Sarala', sans-serif;
 }
 
-$dark-primary: #303F9F; 
+$dark-primary: #455A64; 
 $primary: #3F51B5; 
 $light-primary: #C5CAE9; 
 $text-light: #FFFFFF; 
@@ -91,12 +91,12 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
 }
 
 .btn:hover, .btn-large:hover {
-    background-color: $accent-color;
+    background-color: $dark-primary;
 }
 
 button:focus {
     outline: none;
-    background-color: $accent-color;
+    background-color: $dark-primary;
 }
 
 #registration-nav {
@@ -134,13 +134,18 @@ button:focus {
 
 	.option-card {
 		width: 350px;
-		height: 400px;
+		height: 300px;
 		background-color: $accent-color;
 		color: $text-light;
 	}
 
 	h2 {
 		padding: 30px;
+	}
+
+	.option-card:hover {
+    background-color: $dark-primary;
+    cursor: pointer;
 	}
 
 
