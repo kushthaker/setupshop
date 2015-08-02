@@ -17,6 +17,11 @@ nav {
 
 #registration-section {
   padding: 50px; }
+  #registration-section h1 {
+    padding-left: 60px; }
+  #registration-section form {
+    padding-right: 60px;
+    width: 80%; }
 
 .grad {
   background: -webkit-linear-gradient(right, #E6E3DE, #F6F7F9);
@@ -27,5 +32,22 @@ nav {
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(to right, #E6E3DE, #F6F7F9);
   /* Standard syntax */ }
+
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 2px solid #607D8B;
+  box-shadow: 0 1px 0 0 #607D8B; }
+
+.btn, .btn-large {
+  text-decoration: none;
+  color: #fff;
+  background-color: #607D8B;
+  text-align: center;
+  letter-spacing: .5px;
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  -o-transition: .2s ease-out;
+  -ms-transition: .2s ease-out;
+  transition: .2s ease-out;
+  cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */
