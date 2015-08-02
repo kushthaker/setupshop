@@ -5,46 +5,53 @@
 </head>
 <body>
 
-<nav>
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a ng-href="http://localhost:8000/#/shops">See Shops</a></li>
-      </ul>
-    </div>
-  </nav>
+	<nav>
+		<div class="nav-wrapper">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a ng-href="http://localhost:8000/#/shops">See Shops</a></li>
+			</ul>
+		</div>
+	</nav>
 
-  <div id="hero-section">
-  	<div class="header center-align">
-  		<h1>Set Up Shop</h1>
-  		<h4>Simple shopping and selling.</h4>
-  	</div>
-  </div>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4 text col-md-offset-4">
-				<form ng-submit="ctrl.register()" role="form">
-					<div class="form-group">
-						<label>email</label>
-						<input type="email" name="email" ng-model="ctrl.registrationForm.email" required="required" class="form-control"/>
-					</div>
-
-					<div class="form-group">
-						<label>password</label>
-						<input type="password" name="password" ng-model="ctrl.registrationForm.password" required="required" class="form-control"/>
-					</div>
-
-					<div class="form-group">
-						<label>password confirmation</label>
-						<input type="password" name="password_confirmation" ng-model="ctrl.registrationForm.password_confirmation" required="required" class="form-control"/>
-					</div>
-
-					<button type="submit" class="btn btn-primary btn-lg">Register</button>
-				</form>
-			</div>
+	<div id="hero-section">
+		<div class="header center-align">
+			<h1>Set Up Shop</h1>
+			<h4>Simple shopping and selling.</h4>
 		</div>
 	</div>
 
-</body>
+	<div id="registration-section" class="grad">
+		<div class="container">
+			<div class="row">
 
-</html>
+				<div class="col s6">
+					<h1>Join our community.</h1>		
+				</div>
+
+				<div class="col s6">
+					<form ng-submit="ctrl.register()" role="form">
+						<div class="form-group">
+							<label>email</label>
+							<input type="email" name="email" ng-model="ctrl.registrationForm.email" required="required" class="form-control"/>
+						</div>
+
+						<div class="form-group">
+							<label>password</label>
+							<input type="password" name="password" ng-model="ctrl.registrationForm.password" required="required" class="form-control"/>
+						</div>
+
+						<div class="form-group">
+							<label>password confirmation</label>
+							<input type="password" name="password_confirmation" ng-model="ctrl.registrationForm.password_confirmation" required="required" class="form-control"/>
+						</div>
+
+						<button type="submit" class="btn btn-primary btn-lg">Register</button>
+					</form>
+				</div>
+			
+			</div>
+		</div>
+
+	</body>
+
+	</html>

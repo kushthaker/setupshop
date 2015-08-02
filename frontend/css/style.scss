@@ -24,6 +24,18 @@ nav {
 #hero-section {
 	height: 600px;
 	padding-top: 30px;
+	padding-bottom: 40px;
 	background-image: url(../img/hero.jpg);
 	background-size: cover;
+}
+
+#registration-section {
+	padding: 50px;
+}
+
+.grad {
+  background: -webkit-linear-gradient(right, #E6E3DE, #F6F7F9); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #E6E3DE, #F6F7F9); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #E6E3DE, #F6F7F9); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #E6E3DE, #F6F7F9); /* Standard syntax */
 }
