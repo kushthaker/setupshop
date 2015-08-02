@@ -128,9 +128,24 @@ button:focus {
 	    line-height: 40px;
 	}
 
+}
+
+#profile-registration {
+
+	.option-card {
+		width: 350px;
+		height: 400px;
+		background-color: $accent-color;
+		color: $text-light;
+	}
+
+	h2 {
+		padding: 30px;
+	}
 
 
 }
+
 
 
 // END OF REGISTRATION SECTION STYLES

@@ -89,4 +89,12 @@ button:focus {
   height: 64px;
   line-height: 40px; }
 
+#profile-registration .option-card {
+  width: 350px;
+  height: 400px;
+  background-color: #607D8B;
+  color: #FFFFFF; }
+#profile-registration h2 {
+  padding: 30px; }
+
 /*# sourceMappingURL=style.css.map */
