@@ -8,4 +8,10 @@ nav {
   height: 50px;
   line-height: 50px; }
 
+#hero-section {
+  height: 600px;
+  padding-top: 30px;
+  background-image: url(../img/hero.jpg);
+  background-size: cover; }
+
 /*# sourceMappingURL=style.css.map */
