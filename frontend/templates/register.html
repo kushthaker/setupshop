@@ -6,96 +6,99 @@
 <body>
 
 	<section id="registration-nav">
-	<nav>
-		<div class="nav-wrapper">
-			<ul id="nav-mobile" class="col s6">
-				<li><a href="#/shops">See Shops</a></li>
-			</ul>
-			<ul class="right">
-				<form ng-submit="ctrl.login()" role="form">
-				<li class="login">LOGIN:</li>
-				<li>
-					<input type="email" name="email" ng-model="ctrl.loginForm.email" required="required" class="form-control" placeholder="Email"/>
-				</li>
-				<li>
-					<input type="password" name="password" ng-model="ctrl.loginForm.password" required="required" class="form-control" placeholder="Password">
-				</li>
-				<li>
-					<button type="submit" class="btn btn-primary btn-lg valign-wrapper"><i class="small material-icons valign">input</i></button>
-				</li>
-				</form>
-			</ul>
-		</div>
-	</nav>
+		<nav>
+			<div class="nav-wrapper">
+				<ul id="nav-mobile" class="col s6">
+					<li><a href="#/shops">See Shops</a></li>
+				</ul>
+				<ul class="right">
+					<form ng-submit="ctrl.login()" role="form">
+						<li class="login">LOGIN:</li>
+						<li>
+							<input type="email" name="email" ng-model="ctrl.loginForm.email" required="required" class="form-control" placeholder="Email"/>
+						</li>
+						<li>
+							<input type="password" name="password" ng-model="ctrl.loginForm.password" required="required" class="form-control" placeholder="Password">
+						</li>
+						<li>
+							<button type="submit" class="btn btn-primary btn-lg valign-wrapper"><i class="small material-icons valign">input</i></button>
+						</li>
+					</form>
+				</ul>
+			</div>
+		</nav>
 	</section>
 
 
-
-
-	<!-- SHOPPER REGISTRATION FORM -->
+	<!-- SHOPPER & SHOPKEEPER REGISTRATION FORMS -->
 
 	<section id="profile-registration">
 
-	<div class="container center-align">
-		<div class="row">
-			<h1>Are you a shopper or shopekeeper?</h1>
-			<h5>Or do you just want to see some shops?</h5>
-		</div>
+		<div class="container center-align">
+			<div class="row">
+				<h1>Are you a shopper or shopekeeper?</h1>
+				<h5>Or do you just want to see some shops?</h5>
+			</div>
 
 
-		<div class="row">
-			<div class="col s6">
-				<div ng-click="ctrl.showShopperForm = !ctrl.showShopperForm" ng-show="!ctrl.showShopperForm"class="option-card valign-wrapper">
-					<h2 class="valign">I'm a shopper.</h2>
+			<section id="progress" class="valign-wrapper">
+				<div class="row center-align">
+					<div class="col s4 stage valign-wrapper">
+						<h2 class="valign">1</h2>
+					</div>
+					<div class="col s4 current stage valign-wrapper">
+						<h1 class="valign">2</h1>
+					</div>
+					<div class="col s4 stage valign-wrapper">
+						<h2 class="valign">3</h2>
+					</div>
+				</div>
+			</section>
+
+
+			<div class="row">
+				<div class="col s6">
+					<div ng-click="ctrl.showShopperForm = !ctrl.showShopperForm" ng-show="!ctrl.showShopperForm" class="option-card valign-wrapper">
+						<h2 class="valign">I'm a shopper.</h2>
+					</div>
+
+					<form ng-show="ctrl.showShopperForm" ng-submit="ctrl.registerShopper()" role="form">
+						<h3>I'm a shopper.</h3>
+
+						<div class="form-group">
+							<input type="text" name="name" ng-model="ctrl.shopperForm.name" required="required" class="form-control" placeholder="Name"/>
+						</div>
+
+						<div class="form-group">
+							<input type="text" name="phone" ng-model="ctrl.shopperForm.phone" required="required" class="form-control" placeholder="Phone"/>
+						</div>
+
+						<button type="submit" class="btn btn-primary btn-lg">Start Shopping</button>
+					</form>
 				</div>
 
-				<form ng-show="ctrl.showShopperForm" ng-submit="ctrl.registerShopper()" role="form">
-					<h3>Shopper</h3>
-					<div class="form-group">
-						<label>name</label>
-						<input type="name" name="name" ng-model="ctrl.shopperForm.name" required="required" class="form-control"/>
+				<div class="col s6">
+					<div ng-click="ctrl.showShopkeeperForm = !ctrl.showShopkeeperForm" ng-show="!ctrl.showShopkeeperForm" class="option-card valign-wrapper">
+						<h2 class="valign">I want to set up shop.</h2>
 					</div>
 
-					<div class="form-group">
-						<label>phone</label>
-						<input type="text" name="phone" ng-model="ctrl.shopperForm.phone" required="required" class="form-control"/>
-					</div>
+					<form ng-show="ctrl.showShopkeeperForm" ng-submit="ctrl.registerShopkeeper()" role="form">
+						<h3>I want to set up shop.</h3>
+						<div class="form-group">
+							<input type="text" name="name" ng-model="ctrl.shopkeeperForm.name" required="required" class="form-control" placeholder="Name"/>
+						</div>
 
-					<button type="submit" class="btn btn-primary btn-lg">Start Shopping</button>
-				</form>
-			</div>
+						<div class="form-group">
+							<label>phone</label>
+							<input type="text" name="phone" ng-model="ctrl.shopkeeperForm.phone" required="required" class="form-control" placeholder="Phone"/>
+						</div>
 
-			<div class="col s6">
-				<div class="option-card valign-wrapper">
-					<h2 class="valign">I want to set up shop.</h2>
+						<button type="submit" class="btn btn-primary btn-lg">Start Shopping</button>
+					</form>
 				</div>
 			</div>
 		</div>
-	</div>
 
-
-
-
-			<!-- SHOPKEEPER REGISTRATION FORM -->
-
-			<div class="col-md-4">
-				<form ng-submit="ctrl.registerShopkeeper()" role="form">
-					<h3>Shopkeeper</h3>
-					<div class="form-group">
-						<label>name</label>
-						<input type="name" name="name" ng-model="ctrl.shopkeeperForm.name" required="required" class="form-control"/>
-					</div>
-
-					<div class="form-group">
-						<label>phone</label>
-						<input type="text" name="phone" ng-model="ctrl.shopkeeperForm.phone" required="required" class="form-control"/>
-					</div>
-
-					<button type="submit" class="btn btn-primary btn-lg">Start Shopping</button>
-				</form>
-			</div>
-		</div>
-	</div>
 
 	</section>
 
