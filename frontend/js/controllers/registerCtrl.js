@@ -10,6 +10,10 @@ function RegisterCtrl($location, user) {
 	self.shopperForm = {};
 	self.shopkeeperForm = {};
 
+	//view toggles
+	self.showShopperForm = false;
+	self.showShopkeeperForm = false;
+
 
 
 }
