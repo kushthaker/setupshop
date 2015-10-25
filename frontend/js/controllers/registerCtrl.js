@@ -28,9 +28,11 @@ RegisterCtrl.prototype.login = function() {
 RegisterCtrl.prototype.registerShopper = function() {
 	this.user.shopperForm = this.shopperForm;
 	this.user.registerShopper();
+	this.location.path('/shops');
 };
 
 RegisterCtrl.prototype.registerShopkeeper = function() {
 	this.user.shopkeeperForm = this.shopkeeperForm;
 	this.user.registerShopkeeper();
+	this.location.path('/dashboard');
 };

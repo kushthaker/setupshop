@@ -25,6 +25,6 @@ app.config(function($routeProvider) {
 		controller: 'shopDashboardCtrl as ctrl',
 	})
 	.otherwise({
-		redirectTo: '/welcome',
+		redirectTo: '/landing',
 	})
 });

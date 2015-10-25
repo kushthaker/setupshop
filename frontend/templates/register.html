@@ -45,7 +45,7 @@
 
 		<div class="row">
 			<div class="col s6">
-				<div ng-click="ctrl.showShopperForm = !ctrl.showShopperForm" ng-show="!ctrl.showShopperForm"class="option-card valign-wrapper">
+				<div ng-click="ctrl.showShopperForm = !ctrl.showShopperForm" ng-show="!ctrl.showShopperForm" class="option-card valign-wrapper">
 					<h2 class="valign">I'm a shopper.</h2>
 				</div>
 
@@ -66,20 +66,13 @@
 			</div>
 
 			<div class="col s6">
-				<div class="option-card valign-wrapper">
+				<div class="option-card valign-wrapper" ng-click="ctrl.showShopkeeperForm = !ctrl.showShopkeeperForm" ng-show="!ctrl.showShopkeeperForm">
 					<h2 class="valign">I want to set up shop.</h2>
 				</div>
 			</div>
-		</div>
-	</div>
 
-
-
-
-			<!-- SHOPKEEPER REGISTRATION FORM -->
-
-			<div class="col-md-4">
-				<form ng-submit="ctrl.registerShopkeeper()" role="form">
+			<div class="col s6">
+				<form ng-show="ctrl.showShopkeeperForm" ng-submit="ctrl.registerShopkeeper()" role="form">
 					<h3>Shopkeeper</h3>
 					<div class="form-group">
 						<label>name</label>
@@ -91,11 +84,14 @@
 						<input type="text" name="phone" ng-model="ctrl.shopkeeperForm.phone" required="required" class="form-control"/>
 					</div>
 
-					<button type="submit" class="btn btn-primary btn-lg">Start Shopping</button>
+					<button type="submit" class="btn btn-primary btn-lg">Set up shop</button>
 				</form>
 			</div>
 		</div>
+
+
 	</div>
+
 
 	</section>
 
