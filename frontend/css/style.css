@@ -100,4 +100,18 @@ button:focus {
   background-color: #455A64;
   cursor: pointer; }
 
+#progress div {
+  margin: 40px 55px; }
+#progress .stage {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: #455A64;
+  color: #FFFFFF; }
+#progress h1 {
+  padding-left: 45px; }
+#progress .current {
+  width: 150px;
+  height: 150px; }
+
 /*# sourceMappingURL=style.css.map */
