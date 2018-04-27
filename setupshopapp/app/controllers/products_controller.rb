@@ -43,6 +43,8 @@ class ProductsController < ApplicationController
     end
   end
 
+  #added a comment
+
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
